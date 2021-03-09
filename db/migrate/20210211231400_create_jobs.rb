@@ -4,7 +4,6 @@ class CreateJobs < ActiveRecord::Migration[6.1]
       t.references :category, null: false, foreign_key: true
       t.string :nombre
       t.string :descripcion
-      t.string :foto
       t.string :visible, default: true
 
       t.timestamps

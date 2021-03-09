@@ -2,6 +2,7 @@ module Api
   module V1
 
     class JobsController < ApplicationController
+      before_action :authorized
       before_action :set_job, only: [:show, :update, :destroy]
 
       # GET /jobs
@@ -53,7 +54,7 @@ module Api
 
         # Only allow a list of trusted parameters through.
         def job_params
-          params.permit(:category_id, :nombre, :descripcion, :foto, :visible)
+          params.permit(:category_id, :nombre, :descripcion, :visible, fotos: [])
         end
     end
 
