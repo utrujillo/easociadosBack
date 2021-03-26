@@ -11,6 +11,7 @@ gem 'jwt', '~> 2.2'
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'carrierwave', '~> 2.0'
 gem 'rack-cors'
+gem 'mimemagic', '~> 0.3.9'
 
 gem 'bootsnap', '>= 1.4.4', require: false
 
