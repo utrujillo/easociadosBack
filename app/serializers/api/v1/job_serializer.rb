@@ -4,8 +4,12 @@ module Api
     class JobSerializer < ActiveModel::Serializer
       include Rails.application.routes.url_helpers
 
-      attributes :id, :nombre, :descripcion, :fotos
+      attributes :id, :category_id, :nombre, :descripcion, :fotos
       has_one :category
+
+      def category_id
+        return object.category.id
+      end
 
       def fotos
         return unless object.fotos.attachments

@@ -2,7 +2,7 @@ module Api
   module V1
 
     class JobsController < ApplicationController
-      before_action :authorized
+      before_action :authorized, only: [:create, :update, :destroy]
       before_action :set_job, only: [:show, :update, :destroy]
 
       # GET /jobs

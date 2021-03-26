@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 2021_02_12_045114) do
     t.bigint "category_id", null: false
     t.string "nombre"
     t.string "descripcion"
-    t.string "visible", default: "t"
+    t.boolean "visible", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["category_id"], name: "index_jobs_on_category_id"
