@@ -2,8 +2,8 @@ module Api
   module V1
 
     class UsersController < ApplicationController
-      before_action :authorized, only: [:index, :show, :update, :destroy]
-      before_action :set_user, only: [:show, :update, :destroy]
+      before_action :authorized, only: [:index, :show, :create, :update, :update_password, :destroy]
+      before_action :set_user, only: [:show, :update, :update_password, :destroy]
 
       # GET /users
       def index
@@ -30,6 +30,14 @@ module Api
 
       # PATCH/PUT /users/1
       def update
+        if @user.update(user_params)
+          render json: @user
+        else
+          render json: @user.errors, status: :unprocessable_entity
+        end
+      end
+
+      def update_password
         if @user.update(user_params)
           render json: @user
         else

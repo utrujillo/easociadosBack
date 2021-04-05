@@ -4,7 +4,8 @@ User.create(
   apellidos: 'Trujillo Colón',
   username: 'utrujillo',
   password: 'entrar',
-  password_confirmation: 'entrar'
+  password_confirmation: 'entrar',
+  visible: 0
 )
 
 User.create(
@@ -13,5 +14,6 @@ User.create(
   apellidos: 'del sistema',
   username: 'admin',
   password: '101010',
-  password_confirmation: '101010'
+  password_confirmation: '101010',
+  visible: 1
 )
