@@ -18,7 +18,7 @@ module Api
             access_token: access_token 
           }
         else
-          render json: { message: "Wrong password!" }
+          render json: { message: "Wrong password!" }, status: :unauthorized
         end
       end
 
